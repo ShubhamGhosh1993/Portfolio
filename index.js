@@ -13,12 +13,12 @@ const server = http.createServer(function (req, res) {
         res.end('Contact us pages.');
     } else if (req.url == "/userapi") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        fs.readFile(`${__dirname}/package.json`, "utf-8", (err, data) => {
+        fs.readFile(`${__dirname}/package.json`, "utf-8", (err, data1) => {
             if (err != undefined) {
                 console.log(err);
                 res.end('<h1>404 page not found.</h1>');
             } else {
-                res.end(data);
+                res.end(data1);
             }
         })
     } else {
