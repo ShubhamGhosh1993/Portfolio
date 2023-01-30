@@ -1,5 +1,6 @@
 const fs = require('fs');
 const http = require('http');
+const events = require("./events.js");
 const server = http.createServer(function (req, res) {
 
   if (req.url == '/') {
@@ -7,6 +8,7 @@ const server = http.createServer(function (req, res) {
     res.end('Hello World from others sides.');
   } else if (req.url == '/about') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
+    console.log(events);
     res.end('About pages.');
   } else if (req.url == '/contact-us') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
